@@ -73,7 +73,7 @@ class GeoSparkSuite extends FunSuite with BeforeAndAfter {
       case Right((pipeline, _)) => {
         val row = ARC.run(pipeline)(spark, logger, arcContext).get.first
 
-        assert(row.getDouble(0) == 650.22)
+        assert(row.getDouble(0) == 622.87)
       }
     }
   }

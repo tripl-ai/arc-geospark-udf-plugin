@@ -8,7 +8,7 @@ import ai.tripl.arc.util.log.logger.Logger
 import ai.tripl.arc.api.API.ARCContext
 import ai.tripl.arc.util.Utils
 
-import org.datasyslab.geosparksql.utils.GeoSparkSQLRegistrator
+import org.apache.sedona.sql.utils.SedonaSQLRegistrator
 
 class GeoSpark extends ai.tripl.arc.plugins.UDFPlugin {
 
@@ -16,6 +16,6 @@ class GeoSpark extends ai.tripl.arc.plugins.UDFPlugin {
 
   // one udf plugin can register multiple user defined functions
   override def register()(implicit spark: SparkSession, logger: Logger, arcContext: ARCContext) = {
-    GeoSparkSQLRegistrator.registerAll(spark)
+    SedonaSQLRegistrator.registerAll(spark)
   }
 }
